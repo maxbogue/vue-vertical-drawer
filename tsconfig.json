@@ -22,7 +22,9 @@
   },
   "include": [
     "lib/**/*.ts",
-    "lib/**/*.vue"
+    "lib/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.vue"
   ],
   "exclude": [
     "node_modules"

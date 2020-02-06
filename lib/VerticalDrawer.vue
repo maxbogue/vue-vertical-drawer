@@ -34,10 +34,13 @@ export default class Drawer extends Vue {
   $refs!: { drawer: HTMLElement };
 
   @Prop({ type: Boolean, required: true })
-  readonly show!: boolean;
+  readonly isOpen!: boolean;
+
+  @Prop({ type: String, default: 'all 400ms' })
+  readonly transition!: string;
 
   active = false;
-  innerShow = false;
+  innerShow = this.isOpen;
   height = 0;
 
   get maxHeight(): string {
@@ -50,12 +53,13 @@ export default class Drawer extends Vue {
     }
     return {
       maxHeight: this.maxHeight,
+      '--vertical-drawer-transition': this.transition,
     };
   }
 
-  @Watch('show')
-  onShowChanged(val: boolean): void {
-    if (val) {
+  @Watch('isOpen')
+  onShowChanged(): void {
+    if (this.isOpen) {
       this.open();
     } else {
       this.close();
@@ -94,6 +98,6 @@ export default class Drawer extends Vue {
 }
 .drawerActive {
   overflow: hidden;
-  transition: all 0.4s;
+  transition: var(--vertical-drawer-transition);
 }
 </style>

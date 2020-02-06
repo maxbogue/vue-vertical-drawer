@@ -16,6 +16,7 @@ export const install = Object.assign(
 let GlobalVue = null;
 if (typeof window !== 'undefined') {
   GlobalVue = window.Vue;
+  // @ts-ignore
 } else if (typeof global !== 'undefined') {
   // @ts-ignore
   GlobalVue = global.Vue;
@@ -25,5 +26,4 @@ if (GlobalVue) {
   GlobalVue.use({ install });
 }
 
-// To allow use as module (npm/webpack/etc.) export component
-export default component;
+export default VerticalDrawer;
