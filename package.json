@@ -1,12 +1,9 @@
 {
   "name": "vue-vertical-drawer",
-  "version": "0.2.0",
-  "main": "dist/VerticalDrawer.umd.js",
-  "module": "dist/VerticalDrawer.esm.js",
-  "unpkg": "dist/VerticalDrawer.min.js",
-  "browser": {
-    "./sfc": "lib/VerticalDrawer.vue"
-  },
+  "version": "0.2.1",
+  "main": "dist/vertical-drawer.umd.js",
+  "module": "dist/vertical-drawer.esm.js",
+  "unpkg": "dist/vertical-drawer.min.js",
   "scripts": {
     "build": "vue-cli-service build",
     "serve": "vue-cli-service serve",
