@@ -4,10 +4,9 @@
   "main": "dist/vertical-drawer.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vue-cli-service build",
-    "serve": "vue-cli-service serve",
-    "lint": "vue-cli-service lint",
-    "prepare": "vue-cli-service build --mode package --target lib --name vertical-drawer lib/index.ts"
+    "dev": "webpack --mode development",
+    "lint": "eslint --fix .",
+    "prepare": "webpack --mode production"
   },
   "dependencies": {
     "core-js": "^3.4.4",
