@@ -1,7 +1,7 @@
 {
   "name": "vue-vertical-drawer",
   "version": "0.2.1",
-  "main": "dist/vertical-drawer.js",
+  "main": "dist/vue-vertical-drawer.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "webpack --mode development",
