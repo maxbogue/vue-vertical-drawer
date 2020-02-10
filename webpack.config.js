@@ -1,6 +1,7 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const { DefinePlugin } = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 const sassLoader = {
   loader: 'sass-loader',
@@ -77,9 +78,7 @@ module.exports = {
       '@': path.join(__dirname, 'src'),
     },
   },
-  externals: {
-    vue: 'vue',
-  },
+  externals: nodeExternals(),
   devtool: 'source-map',
   performance: {
     hints: false,
