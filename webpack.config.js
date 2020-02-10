@@ -77,6 +77,9 @@ module.exports = {
       '@': path.join(__dirname, 'src'),
     },
   },
+  externals: {
+    vue: 'vue',
+  },
   devtool: 'source-map',
   performance: {
     hints: false,
