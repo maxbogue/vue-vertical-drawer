@@ -30,7 +30,7 @@ function doubleRaf(): Promise<void> {
 }
 
 @Component
-export default class Drawer extends Vue {
+export default class VerticalDrawer extends Vue {
   $refs!: { drawer: HTMLElement };
 
   @Prop({ type: Boolean, required: true })
@@ -40,7 +40,7 @@ export default class Drawer extends Vue {
   readonly transition!: string;
 
   active = false;
-  innerShow = this.isOpen;
+  innerShow = false;
   height = 0;
 
   get maxHeight(): string {
@@ -64,6 +64,10 @@ export default class Drawer extends Vue {
     } else {
       this.close();
     }
+  }
+
+  created(): void {
+    this.innerShow = this.isOpen;
   }
 
   async open(): Promise<void> {
